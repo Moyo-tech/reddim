@@ -15,50 +15,32 @@ import { useMainPaperStyles } from './styles/muiStyles';
 const Routes = () => {
     const classes = useMainPaperStyles();
 
-    return ( <
-        Switch >
-        <
-        Route exact path = "/" >
-        <
-        Container disableGutters className = { classes.homepage } >
-        <
-        div className = { classes.postsPanel } >
-        <
-        PostFormModal / >
-        <
-        PostList / >
-        <
-        /div> <
-        TopSubsPanel / >
-        <
-        /Container> < /
-        Route > <
-        Route exact path = "/comments/:id" >
-        <
-        PostCommentsPage / >
-        <
-        /Route> <
-        Route exact path = "/u/:username" >
-        <
-        UserPage / >
-        <
-        /Route> <
-        Route exact path = "/r/:sub" >
-        <
-        SubPage / >
-        <
-        /Route> <
-        Route exact path = "/search/:query" >
-        <
-        SearchResults / >
-        <
-        /Route> <
-        Route >
-        <
-        NotFoundPage / >
-        <
-        /Route> < /
-        Switch >
+    return (<Switch >
+        <Route exact path="/" >
+            <Container disableGutters className={classes.homepage} >
+                <div className={classes.postsPanel} >
+                    <PostFormModal />
+                    <PostList />
+                </div>
+                <TopSubsPanel />
+            </Container>
+        </Route >
+        <Route exact path="/comments/:id" >
+            <PostCommentsPage />
+        </Route>
+        <Route exact path="/u/:username" >
+            <UserPage />
+        </Route>
+        <Route exact path="/r/:sub" >
+            <SubPage />
+        </Route>
+        <Route exact path="/search/:query" >
+            <SearchResults />
+        </Route>
+        <Route >
+            <NotFoundPage />
+        </Route>
+    </Switch >
     );
 };
 

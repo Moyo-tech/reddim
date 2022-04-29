@@ -21,7 +21,7 @@ const App = () => {
     const { darkMode } = useSelector((state) => state);
 
     useEffect(() => {
-        const setPostsAndSubreddits = async() => {
+        const setPostsAndSubreddits = async () => {
             try {
                 await dispatch(fetchPosts('hot'));
                 await dispatch(setSubList());
@@ -37,19 +37,13 @@ const App = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return ( < ThemeProvider theme = { customTheme(darkMode) } >
-        <
-        Paper className = { classes.root }
-        elevation = { 0 } >
-        <
-        ToastNotif / >
-        <
-        NavBar / >
-        <
-        Routes / >
-        <
-        /Paper> < /
-        ThemeProvider >
+    return (<ThemeProvider theme={customTheme(darkMode)} >
+        <Paper className={classes.root}
+            elevation={0} >
+            <ToastNotif />
+            <NavBar />
+            <Routes />
+        </Paper> </ThemeProvider >
     );
 };
 
