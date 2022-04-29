@@ -37,4 +37,4 @@ const getUser = async(req, res) => {
     res.status(200).json({ userDetails: user, posts: paginatedPosts });
 };
 
-module.exports = { getUser, setUserAvatar, removeUserAvatar };
+module.exports = { getUser };

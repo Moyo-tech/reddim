@@ -54,8 +54,7 @@ router.patch('/:id/comment/:commentId/reply/:replyId', auth, updateReply);
 router.post('/:id/comment/:commentId/upvote', auth, upvoteComment);
 router.post('/:id/comment/:commentId/downvote', auth, downvoteComment);
 router.post('/:id/comment/:commentId/reply/:replyId/upvote', auth, upvoteReply);
-router.post(
-    '/:id/comment/:commentId/reply/:replyId/downvote',
+router.post('/:id/comment/:commentId/reply/:replyId/downvote',
     auth,
     downvoteReply
 );

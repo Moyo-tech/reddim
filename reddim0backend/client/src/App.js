@@ -16,36 +16,41 @@ import { useMainPaperStyles } from './styles/muiStyles';
 import { ThemeProvider } from '@material-ui/core/styles';
 
 const App = () => {
-  const classes = useMainPaperStyles();
-  const dispatch = useDispatch();
-  const { darkMode } = useSelector((state) => state);
+    const classes = useMainPaperStyles();
+    const dispatch = useDispatch();
+    const { darkMode } = useSelector((state) => state);
 
-  useEffect(() => {
-    const setPostsAndSubreddits = async () => {
-      try {
-        await dispatch(fetchPosts('hot'));
-        await dispatch(setSubList());
-        await dispatch(setTopSubsList());
-      } catch (err) {
-        dispatch(notify(getErrorMsg(err), 'error'));
-      }
-    };
+    useEffect(() => {
+        const setPostsAndSubreddits = async() => {
+            try {
+                await dispatch(fetchPosts('hot'));
+                await dispatch(setSubList());
+                await dispatch(setTopSubsList());
+            } catch (err) {
+                dispatch(notify(getErrorMsg(err), 'error'));
+            }
+        };
 
-    dispatch(setUser());
-    dispatch(setDarkMode());
-    setPostsAndSubreddits();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+        dispatch(setUser());
+        dispatch(setDarkMode());
+        setPostsAndSubreddits();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-  return (
-    <ThemeProvider theme={customTheme(darkMode)}>
-      <Paper className={classes.root} elevation={0}>
-        <ToastNotif />
-        <NavBar />
-        <Routes />
-      </Paper>
-    </ThemeProvider>
-  );
+    return ( < ThemeProvider theme = { customTheme(darkMode) } >
+        <
+        Paper className = { classes.root }
+        elevation = { 0 } >
+        <
+        ToastNotif / >
+        <
+        NavBar / >
+        <
+        Routes / >
+        <
+        /Paper> < /
+        ThemeProvider >
+    );
 };
 
 export default App;
