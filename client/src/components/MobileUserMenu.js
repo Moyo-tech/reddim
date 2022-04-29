@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import AuthFormModal from './AuthFormModal';
 import SubFormModal from './SubFormModal';
+
 import DarkModeMenuItem from './DarkModeMenuItem';
+import { getCircularAvatar } from '../utils/cloudinaryTransform';
 import storageService from '../utils/localStorage';
 
 import {
     IconButton,
     Menu,
     MenuItem,
+    Avatar,
     ListItemIcon,
     Divider,
 } from '@material-ui/core';
-import { useUserMenuStyles } from '../styles/stylemui';
+import { useUserMenuStyles } from '../styles/muiStyles';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
@@ -85,7 +88,10 @@ const MobileUserMenu = ({ user, handleLogout }) => {
                 /MenuItem> <
                 SubFormModal type = "menu"
                 handleCloseMenu = { handleClose }
-                />  <
+                /> <
+                UpdateAvatarModal handleCloseMenu = { handleClose }
+                user = { loggedUser }
+                /> <
                 MenuItem onClick = { handleLogoutClick } >
                 <
                 ListItemIcon >

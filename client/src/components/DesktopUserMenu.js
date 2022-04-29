@@ -2,18 +2,21 @@ import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import AuthFormModal from './AuthFormModal';
 import SubFormModal from './SubFormModal';
+
 import DarkModeMenuItem from './DarkModeMenuItem';
+import { getCircularAvatar } from '../utils/cloudinaryTransform';
 import storageService from '../utils/localStorage';
 
 import {
     Button,
     Menu,
     MenuItem,
+    Avatar,
     Typography,
     ListItemIcon,
     Divider,
 } from '@material-ui/core';
-import { useUserMenuStyles } from '../styles/stylemui';
+import { useUserMenuStyles } from '../styles/muiStyles';
 import FilterVintageIcon from '@material-ui/icons/FilterVintage';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
@@ -39,11 +42,13 @@ const DesktopUserMenu = ({ user, handleLogout }) => {
 
     return ( <
         div > {
-            loggedUser ? ( <
+            loggedUser ?
+            ( <
                 >
                 <
                 Button onClick = { handleMenu }
-                className = { classes.userBtn } > <
+                className = { classes.userBtn } >
+                <
                 div >
                 <
                 Typography color = "secondary" > { loggedUser.username } < /Typography> <
@@ -54,12 +59,10 @@ const DesktopUserMenu = ({ user, handleLogout }) => {
                 style = {
                     { marginRight: '0.2em' }
                 }
-                color = "secondary" /
-                >
-                { loggedUser.karma }
+                color = "secondary" / > { loggedUser.karma }
                 karma <
-                /Typography> < /
-                div > <
+                /Typography> <
+                /div > <
                 /Button> <
                 Menu anchorEl = { anchorEl }
                 anchorOrigin = {
@@ -86,12 +89,8 @@ const DesktopUserMenu = ({ user, handleLogout }) => {
                 AccountCircleIcon style = {
                     { marginRight: 7 }
                 }
-                /> My Profile < /
-                ListItemIcon > <
-                /MenuItem> <
-                SubFormModal type = "menu"
-                handleCloseMenu = { handleClose }
-                />  <
+                /> My Profile <
+                /ListItemIcon > <
                 MenuItem onClick = { handleLogoutClick } >
                 <
                 ListItemIcon >
@@ -99,28 +98,32 @@ const DesktopUserMenu = ({ user, handleLogout }) => {
                 PowerSettingsNewIcon style = {
                     { marginRight: 7 }
                 }
-                /> Logout < /
-                ListItemIcon > <
+                /> Logout <
+                /ListItemIcon > <
                 /MenuItem> <
                 Divider variant = "middle" / >
                 <
                 DarkModeMenuItem closeMenu = { handleClose }
-                /> < /
-                Menu > <
+                /> <
+                /MenuItem > <
+                /Menu> <
                 />
-            ) : ( <
+            ) :
+                ( <
                 div className = { classes.navItems } >
                 <
                 AuthFormModal / >
                 <
                 DarkModeMenuItem closeMenu = { handleClose }
                 navItem = { true }
-                /> < /
-                div >
+                /> <
+                /div >
             )
-        } <
+        }
+
+        <
         /div>
-    );
+    )
 };
 
-export default DesktopUserMenu;
+export default DesktopUserMenu

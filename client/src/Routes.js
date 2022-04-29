@@ -10,7 +10,7 @@ import SearchResults from './components/SearchResults';
 import NotFoundPage from './components/NotFoundPage';
 
 import { Container } from '@material-ui/core/';
-import { useMainPaperStyles } from './styles/stylemui';
+import { useMainPaperStyles } from './styles/muiStyles';
 
 const Routes = () => {
     const classes = useMainPaperStyles();
