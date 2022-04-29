@@ -70,42 +70,6 @@ const deletePost = async(id) => {
     return response.data;
 };
 
-const upvoteComment = async(postId, commentId) => {
-    const response = await axios.post(
-        `${baseUrl}/${postId}/comment/${commentId}/upvote`,
-        null,
-        setConfig()
-    );
-    return response.data;
-};
-
-const downvoteComment = async(postId, commentId) => {
-    const response = await axios.post(
-        `${baseUrl}/${postId}/comment/${commentId}/downvote`,
-        null,
-        setConfig()
-    );
-    return response.data;
-};
-
-const upvoteReply = async(postId, commentId, replyId) => {
-    const response = await axios.post(
-        `${baseUrl}/${postId}/comment/${commentId}/reply/${replyId}/upvote`,
-        null,
-        setConfig()
-    );
-    return response.data;
-};
-
-const downvoteReply = async(postId, commentId, replyId) => {
-    const response = await axios.post(
-        `${baseUrl}/${postId}/comment/${commentId}/reply/${replyId}/downvote`,
-        null,
-        setConfig()
-    );
-    return response.data;
-};
-
 const postComment = async(postId, commentObj) => {
     const response = await axios.post(
         `${baseUrl}/${postId}/comment`,
@@ -168,10 +132,6 @@ const postService = {
     upvotePost,
     downvotePost,
     deletePost,
-    upvoteComment,
-    downvoteComment,
-    upvoteReply,
-    downvoteReply,
     postComment,
     postReply,
     updateComment,

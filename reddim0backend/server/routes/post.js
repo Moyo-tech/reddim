@@ -50,13 +50,5 @@ router.post('/:id/comment/:commentId/reply', auth, postReply);
 router.delete('/:id/comment/:commentId/reply/:replyId', auth, deleteReply);
 router.patch('/:id/comment/:commentId/reply/:replyId', auth, updateReply);
 
-//comment vote routes
-router.post('/:id/comment/:commentId/upvote', auth, upvoteComment);
-router.post('/:id/comment/:commentId/downvote', auth, downvoteComment);
-router.post('/:id/comment/:commentId/reply/:replyId/upvote', auth, upvoteReply);
-router.post('/:id/comment/:commentId/reply/:replyId/downvote',
-    auth,
-    downvoteReply
-);
 
 module.exports = router;

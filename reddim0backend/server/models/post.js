@@ -10,14 +10,6 @@ const replySchema = new mongoose.Schema({
         type: String,
         trim: true,
     },
-    upvotedBy: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    }, ],
-    downvotedBy: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    }, ],
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
 });
@@ -32,14 +24,6 @@ const commentSchema = new mongoose.Schema({
         trim: true,
     },
     replies: [replySchema],
-    upvotedBy: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    }, ],
-    downvotedBy: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    }, ],
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
 });
