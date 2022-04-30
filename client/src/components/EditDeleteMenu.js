@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory, useLocation } from 'react-router-dom';
-import DeleteDialog from './DeleteDialog';
-import PostFormModal from './PostFormModal';
-import { removePost } from '../reducers/postReducer';
-import { notify } from '../reducers/notificationReducer';
-import getErrorMsg from '../utils/getErrorMsg';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
+import DeleteDialog from "./DeleteDialog";
+import PostFormModal from "./PostFormModal";
+import { removePost } from "../reducers/postReducer";
+import { notify } from "../reducers/notificationReducer";
+import getErrorMsg from "../utils/getErrorMsg";
 
-import { IconButton, Menu } from '@material-ui/core';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import { IconButton, Menu } from "@material-ui/core";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 const EditDeleteMenu = ({
   id,
@@ -36,19 +36,19 @@ const EditDeleteMenu = ({
     try {
       handleClose();
       await dispatch(removePost(id));
-      if (location.pathname !== '/') {
-        history.push('/');
+      if (location.pathname !== "/") {
+        history.push("/");
       }
-      dispatch(notify(`Post deleted!`, 'success'));
+      dispatch(notify(`Post deleted!`, "success"));
     } catch (err) {
-      dispatch(notify(getErrorMsg(err), 'error'));
+      dispatch(notify(getErrorMsg(err), "error"));
     }
   };
 
   return (
     <div>
-      {buttonType === 'buttonGroup' ? (
-        <div style={{ display: 'flex' }}>
+      {buttonType === "buttonGroup" ? (
+        <div style={{ display: "flex" }}>
           <PostFormModal
             actionType="edit"
             handleMenuClose={handleClose}

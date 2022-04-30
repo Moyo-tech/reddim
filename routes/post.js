@@ -31,7 +31,7 @@ router.get('/:id/comments', getPostAndComments);
 router.get('/subscribed', auth, getSubscribedPosts);
 router.post('/', auth, createNewPost);
 router.patch('/:id', auth, updatePost);
-router.delete(':id', auth, deletePost);
+router.delete('/:id', auth, deletePost);
 
 //posts vote routes
 router.post('/:id/upvote', auth, upvotePost);

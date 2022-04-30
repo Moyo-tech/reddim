@@ -74,7 +74,6 @@ const UserPage = () => {
     createdAt,
     posts,
     totalComments,
-    karmaPoints,
   } = userInfo.userDetails;
 
   const handleLoadPosts = async () => {
@@ -137,20 +136,10 @@ const UserPage = () => {
             </div>
             <div className={classes.itemWrapper}>
               <div className={classes.twoItemsDiv}>
-                <Typography variant="body1" color="secondary">
-                  Karma
-                </Typography>
-                <Typography variant="h6" color="secondary">
-                  {karmaPoints.commentKarma + karmaPoints.postKarma}
-                </Typography>
+              
               </div>
               <div className={classes.twoItemsDiv}>
-                <Typography variant="body1" color="secondary">
-                  Post Karma <strong>{karmaPoints.postKarma}</strong>
-                </Typography>
-                <Typography variant="body1" color="secondary">
-                  Comment Karma <strong>{karmaPoints.commentKarma}</strong>
-                </Typography>
+               
               </div>
             </div>
           </div>

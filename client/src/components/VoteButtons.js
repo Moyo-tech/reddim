@@ -10,7 +10,7 @@ export const UpvoteButton = ({ user, body, handleUpvote, size }) => {
     <Checkbox
       checked={body.upvotedBy.includes(user.id)}
       icon={<ArrowUpwardIcon style={{ color: '#b2b2b2' }} />}
-      checkedIcon={<ArrowUpwardIcon style={{ color: '#FF8b60' }} />}
+      checkedIcon={<ArrowUpwardIcon style={{ color: 'rgb(135, 206, 235)' }} />}
       onChange={handleUpvote}
       size={size || 'small'}
     />
@@ -24,7 +24,7 @@ export const DownvoteButton = ({ user, body, handleDownvote, size }) => {
     <Checkbox
       checked={body.downvotedBy.includes(user.id)}
       icon={<ArrowDownwardIcon style={{ color: '#b2b2b2' }} />}
-      checkedIcon={<ArrowDownwardIcon style={{ color: '#9494FF' }} />}
+      checkedIcon={<ArrowDownwardIcon style={{ color: 'rgb(15, 82, 186)' }} />}
       onChange={handleDownvote}
       size={size || 'small'}
     />

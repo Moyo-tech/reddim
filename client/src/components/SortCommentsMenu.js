@@ -30,18 +30,8 @@ const SortCommentsMenu = () => {
           <MenuItem value="new" onClick={() => handleSortComments('new')}>
             New
           </MenuItem>
-          <MenuItem
-            value="upvoted"
-            onClick={() => handleSortComments('upvoted')}
-          >
-            Most Upvoted
-          </MenuItem>
-          <MenuItem
-            value="downvoted"
-            onClick={() => handleSortComments('downvoted')}
-          >
-            Most Downvoted
-          </MenuItem>
+        
+
           <MenuItem
             value="replied"
             onClick={() => handleSortComments('replied')}

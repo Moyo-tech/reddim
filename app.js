@@ -6,6 +6,9 @@ const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/post');
 const subredditRoutes = require('./routes/subreddit');
 const userRoutes = require('./routes/user');
+const path = require("path");
+
+require("dotenv").config()
 
 const app = express();
 
@@ -20,5 +23,6 @@ app.use('/api/reddim/users', userRoutes);
 
 app.use(middleware.unknownEndpointHandler);
 app.use(middleware.errorHandler);
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 module.exports = app;

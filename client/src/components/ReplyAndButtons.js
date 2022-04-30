@@ -4,7 +4,6 @@ import { editReply, deleteReply } from '../reducers/postCommentsReducer';
 import { notify } from '../reducers/notificationReducer';
 import DeleteDialog from './DeleteDialog';
 import getErrorMsg from '../utils/getErrorMsg';
-
 import { TextField, Button, Typography } from '@material-ui/core';
 import { useCommentAndBtnsStyles } from '../styles/muiStyles';
 import SendIcon from '@material-ui/icons/Send';

@@ -6,7 +6,8 @@
     "scripts": {
         "start": "node index.js",
         "dev": "nodemon index.js",
-        "build:ui": "rm -rf build && cd ../client && rm -rf build && npm run build --prod && cp -r build ../server"
+        "build:ui": "rm -rf build && cd ../client && rm -rf build && npm run build --prod && cp -r build ../server",
+        "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
     },
     "author": "Team reddim",
     "license": "ISC",
@@ -24,5 +25,9 @@
     },
     "devDependencies": {
         "eslint": "^7.18.0"
+    },
+    "engines": {
+        "node": "16.14.2"
     }
+    
 }

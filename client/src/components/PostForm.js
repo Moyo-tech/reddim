@@ -182,7 +182,7 @@ const AddPostForm = ({
                       actionType === 'edit'
                         ? postToEditSub.subredditName
                         : !fromSubreddit
-                        ? 'Choose a subreddish'
+                        ? 'Choose a subreddim'
                         : fromSubreddit.subredditName
                     }
                     placeholder="Search by name"

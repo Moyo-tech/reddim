@@ -59,15 +59,11 @@ const DeleteDialog = ({ title, handleDelete, handleMenuClose, type }) => {
             <DialogTitle > {" "} {
                 type === "comment" ?
                     "Delete Comment?" :
-                    type === "avatar" ?
-                        "Remove Avatar?" :
                         "Delete Post?"
             } {" "} </DialogTitle>{" "} <DialogContent dividers >
                 <DialogContentText > {" "} {
                     type === "comment" ?
                         `Are you sure you want to delete your comment?` :
-                        type === "avatar" ?
-                            "Are you sure you want to remove your avatar?" :
                             `Are you sure you want to delete your post titled '${title}'? You
               can't undo this.`
                 } {" "} </DialogContentText>{" "} </DialogContent>{" "} <DialogActions >
@@ -82,8 +78,6 @@ const DeleteDialog = ({ title, handleDelete, handleMenuClose, type }) => {
                     {
                         type === "comment" ?
                             "Delete Comment" :
-                            type === "avatar" ?
-                                "Remove Avatar" :
                                 "Delete Post"
                     } {" "} </Button>{" "} </DialogActions>{" "} </Dialog>{" "} </div>
     );
